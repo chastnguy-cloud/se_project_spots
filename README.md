@@ -1,21 +1,61 @@
-# Project 3: Spots
+# Spots
 
-### Overview  
+A responsive photo-sharing web app where users can showcase their favorite places and discover new ones.
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+## Overview
+
+Spots is a social media style platform built as part of the TripleTen Software Engineering bootcamp. Users can view a profile section with an avatar, name, and bio, as well as a grid of photo cards with captions and like buttons. The layout is fully responsive across desktop, tablet, and mobile screen sizes.
+
+## Features
+
+- Profile section with avatar, name, subtitle, and action buttons
+- Responsive 3-column photo card grid that adapts to smaller screens
+- Hover states on buttons and like icons
+- BEM-based CSS architecture for clean, maintainable styles
+- Mobile-first responsive design with media query breakpoints
+
+## Technologies
+
+- **HTML5** — semantic markup
+- **CSS3** — Flexbox, CSS Grid, custom properties, media queries
+- **BEM** — Block Element Modifier methodology for CSS organization
+- **Figma** — design reference and asset export
+
+## Project Structure
+
+```
+spots/
+  index.html
+  pages/
+    index.css         ← imports all block styles
+  blocks/
+    page.css
+    header.css
+    profile.css
+    cards.css
+    card.css
+    footer.css
+    content.css
+  vendor/
+    normalize.css
+    fonts.css
+    fonts/
+  images/
+```
+
+## Responsive Breakpoints
+
+| Breakpoint | Layout                  |
+| ---------- | ----------------------- |
+| 1280px+    | Full desktop layout     |
+| 768px      | 2-column card grid      |
+| 627px      | Mobile profile layout   |
+| 480px      | Single column card grid |
+
+## Design
+
+Designed in Figma as part of the TripleTen Sprint 3 project. View the original design file [here](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots).
+
+## Author
+
+Charles Nguyen

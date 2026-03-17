@@ -1,0 +1,25 @@
+.cards {
+  border-bottom: 2px solid #21212166;
+  padding: 20px 0;
+}
+
+.cards__list {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 413px);
+  gap: 40px 20px;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.cards__caption {
+  height: 24px;
+}
+
+@media screen and (max-width: 627px) {
+  .cards__list {
+    grid-template-columns: repeat(auto-fit, 288px);
+  }
+}

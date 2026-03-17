@@ -1,0 +1,130 @@
+.profile {
+  margin: 0 auto;
+  display: flex;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.4);
+  padding: 34px 0 20px;
+}
+
+.profile__picture {
+  width: 190px;
+  height: 190px;
+  margin-right: 20px;
+  border-radius: 8px;
+}
+
+.profile__description {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__description-title {
+  margin: 0 0 12px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  line-height: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  width: 420px;
+}
+
+.profile__description-subtitle {
+  margin: 0;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  width: 420px;
+}
+
+.profile__description-button {
+  margin-top: auto;
+  background-color: transparent;
+  border: none;
+  margin-right: auto;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.profile__description-button:hover {
+  opacity: 1;
+}
+
+.profile__button {
+  background-color: #212121;
+  color: #fcf5e5;
+  width: 149px;
+  height: 52px;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-left: auto;
+  width: fit-content;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.profile__button-image {
+  max-height: 12px;
+  max-width: 12px;
+}
+
+.profile__button:hover {
+  background-color: rgba(33, 33, 33, 0.8);
+}
+
+@media screen and (max-width: 627px) {
+  .profile {
+    flex-direction: column;
+    max-width: 288px;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .profile__picture {
+    height: 80px;
+    width: 80px;
+    margin: 0 0 12px;
+  }
+
+  .profile__description {
+    margin: 0 0 20px;
+  }
+
+  .profile__description-title {
+    font-size: 20px;
+    margin: 0 0 6px;
+    max-width: 288px;
+  }
+
+  .profile__description-subtitle {
+    margin: 0 0 32px;
+    max-width: 288px;
+  }
+
+  .profile__description-button {
+    margin: 0;
+  }
+
+  .profile__button {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}

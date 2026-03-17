@@ -1,4 +1,13 @@
 .page {
   background-color: #fcf5e5;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Can apply this class to apply to any part that requires this formatting */
+.page__section {
+  max-width: 1280px;
+  margin: 0 auto;
 }
