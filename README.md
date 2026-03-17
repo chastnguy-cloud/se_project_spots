@@ -56,6 +56,11 @@ spots/
 
 Designed in Figma as part of the TripleTen Sprint 3 project. View the original design file [here](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots).
 
+## Project Pitch Video
+
+Check out [this video](https://www.loom.com/share/7504f5b5c5484e9880b649cd9988addb), where I describe my
+project and some challenges I faced while building it.
+
 ## Author
 
 Charles Nguyen
