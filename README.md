@@ -2,6 +2,10 @@
 
 A responsive photo-sharing web app where users can showcase their favorite places and discover new ones.
 
+## GITHUB Link
+
+https://github.com/chastnguy-cloud/se_project_spots
+
 ## Overview
 
 Spots is a social media style platform built as part of the TripleTen Software Engineering bootcamp. Users can view a profile section with an avatar, name, and bio, as well as a grid of photo cards with captions and like buttons. The layout is fully responsive across desktop, tablet, and mobile screen sizes.
