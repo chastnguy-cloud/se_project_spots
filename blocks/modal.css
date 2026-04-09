@@ -35,6 +35,7 @@
   background-color: #ffffff;
   padding: 32px 50px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .modal__close-btn {
@@ -46,6 +47,12 @@
   border: none;
   background-color: #ffffff;
   opacity: 40%;
+  background-image: url("../images/close-button.svg");
+}
+
+.modal__close-btn:hover {
+  cursor: pointer;
+  opacity: 100%;
 }
 
 .modal__form {
@@ -66,6 +73,7 @@
   padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 12px;
+  box-sizing: border-box;
 }
 
 .modal__input::placeholder {
@@ -81,9 +89,26 @@
   color: #fcf5e5;
 }
 
+.modal__submit-btn:hover {
+  cursor: pointer;
+  opacity: 0.9; /* Makes button slightly transparent */
+  transition:
+    background-color 0.15s,
+    opacity 0.15s;
+}
+
 @media screen and (max-width: 627px) {
   .modal__submit-btn {
     width: 100%;
     max-width: none;
+  }
+
+  .modal__container {
+    padding: 22px 12px 12px;
+  }
+
+  .modal__close-btn {
+    top: 12px;
+    right: 12px;
   }
 }

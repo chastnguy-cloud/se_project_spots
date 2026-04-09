@@ -4,7 +4,7 @@ A responsive photo-sharing web app where users can showcase their favorite place
 
 ## GITHUB Link
 
-https://github.com/chastnguy-cloud/se_project_spots
+https://chastnguy-cloud.github.io/se_project_spots/
 
 ## Overview
 

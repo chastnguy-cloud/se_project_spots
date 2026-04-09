@@ -26,20 +26,28 @@ const editProfileDescriptionInput = profileDescriptionModal.querySelector(
 const newPostBtn = document.querySelector(".profile__button");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostModalCloseBtn = newPostModal.querySelector(".modal__close-btn");
-const addCardFormELement = newPostModal.querySelector(".modal__form");
-const nameInput = newPostModal.querySelector("#caption-input");
-const linkInput = newPostModal.querySelector("#card-image-input");
+const addCardFormElement = newPostModal.querySelector(".modal__form");
+const captionNameInput = newPostModal.querySelector("#caption-input");
+const captionLinkInput = newPostModal.querySelector("#card-image-input");
 
 // event listeners for "Edit Profile" modal [1]
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  profileDescriptionModal.classList.add("modal_is-opened");
+  openModal(profileDescriptionModal);
 });
 
 editProfileModalCloseBtn.addEventListener("click", function () {
-  profileDescriptionModal.classList.remove("modal_is-opened");
+  closeModal(profileDescriptionModal);
 });
+
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
 
 // Edit Profile submission handler [1]
 
@@ -47,25 +55,25 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  profileDescriptionModal.classList.remove("modal_is-opened");
+  closeModal(profileDescriptionModal);
 }
 
 profileDescriptionModal.addEventListener("submit", handleProfileFormSubmit);
 
 // event listeners for "New Post" modal [2]
 newPostBtn.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-opened");
+  openModal(newPostModal);
 });
 
 newPostModalCloseBtn.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
 });
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  console.log(nameInput.value);
-  console.log(linkInput.value);
-  newPostModal.classList.remove("modal_is-opened");
+  console.log(captionNameInput.value);
+  console.log(captionLinkInput.value);
+  closeModal(newPostModal);
 }
 
-addCardFormELement.addEventListener("submit", handleAddCardSubmit);
+addCardFormElement.addEventListener("submit", handleAddCardSubmit);
