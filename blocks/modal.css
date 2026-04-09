@@ -26,6 +26,10 @@
 
 .modal__title {
   margin: 0 0 32px;
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 32px;
 }
 
 .modal__container {
@@ -47,7 +51,7 @@
   border: none;
   background-color: #ffffff;
   opacity: 40%;
-  background-image: url("../images/close-button.svg");
+  background: transparent url("../images/close-button.svg") center no-repeat;
 }
 
 .modal__close-btn:hover {
