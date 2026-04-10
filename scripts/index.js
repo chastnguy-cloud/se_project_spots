@@ -1,12 +1,12 @@
 // Variable for the "Edit Profile" Button [1]
 const editProfileBtn = document.querySelector(".profile__description-button");
 
+// Variable for the whole "Edit Profile" modal [1]
+const profileDescriptionModal = document.querySelector("#edit-profile-modal");
+
 // Variable for close button on the "Edit Profile" modal [1]
 const editProfileModalCloseBtn =
   profileDescriptionModal.querySelector(".modal__close-btn");
-
-// Variable for the whole "Edit Profile" modal [1]
-const profileDescriptionModal = document.querySelector("#edit-profile-modal");
 
 // variables to store inputs from form - textContent will be assigned to basically get the values of the input in the profileNameEl and ProfileDescriptionEl [1]
 const profileNameEl = document.querySelector(".profile__description-title");
