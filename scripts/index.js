@@ -1,12 +1,12 @@
 // Variable for the "Edit Profile" Button [1]
 const editProfileBtn = document.querySelector(".profile__description-button");
 
-// Variable for the whole "Edit Profile" modal [1]
-const profileDescriptionModal = document.querySelector("#edit-profile-modal");
-
 // Variable for close button on the "Edit Profile" modal [1]
 const editProfileModalCloseBtn =
   profileDescriptionModal.querySelector(".modal__close-btn");
+
+// Variable for the whole "Edit Profile" modal [1]
+const profileDescriptionModal = document.querySelector("#edit-profile-modal");
 
 // variables to store inputs from form - textContent will be assigned to basically get the values of the input in the profileNameEl and ProfileDescriptionEl [1]
 const profileNameEl = document.querySelector(".profile__description-title");
@@ -41,23 +41,6 @@ editProfileModalCloseBtn.addEventListener("click", function () {
   closeModal(profileDescriptionModal);
 });
 
-function openModal(modal) {
-  modal.classList.add("modal_is-opened");
-}
-
-function closeModal(modal) {
-  modal.classList.remove("modal_is-opened");
-}
-
-// Edit Profile submission handler [1]
-
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-  profileNameEl.textContent = editProfileNameInput.value;
-  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  closeModal(profileDescriptionModal);
-}
-
 profileDescriptionModal.addEventListener("submit", handleProfileFormSubmit);
 
 // event listeners for "New Post" modal [2]
@@ -69,12 +52,31 @@ newPostModalCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
+// event listener that will reset the form in the newPostModal after submit is pressed [2]
+addCardFormElement.addEventListener("submit", handleAddCardSubmit);
+
+// Edit Profile submission handler function [1]
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+  profileNameEl.textContent = editProfileNameInput.value;
+  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
+  closeModal(profileDescriptionModal);
+}
+
+// New Post modal submission [2]
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   console.log(captionNameInput.value);
   console.log(captionLinkInput.value);
   closeModal(newPostModal);
-  addCardFormElement.requestFullscreen();
+  addCardFormElement.reset();
 }
 
-addCardFormElement.addEventListener("submit", handleAddCardSubmit);
+// General functions to open and close modal by adding and removing with classList
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
