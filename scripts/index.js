@@ -13,10 +13,12 @@ const profileNameEl = document.querySelector(".profile__description-title");
 const profileDescriptionEl = document.querySelector(
   ".profile__description-subtitle",
 );
+
 // variable for profile name input in "Edit Profile" modal form [1]
 const editProfileNameInput = profileDescriptionModal.querySelector(
   "#profile-name-input",
 );
+
 // variable for profile description input in "Edit Profile" modal form [1]
 const editProfileDescriptionInput = profileDescriptionModal.querySelector(
   "#profile-description-input",
@@ -29,6 +31,32 @@ const newPostModalCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const addCardFormElement = newPostModal.querySelector(".modal__form");
 const captionNameInput = newPostModal.querySelector("#caption-input");
 const captionLinkInput = newPostModal.querySelector("#card-image-input");
+
+// General functions to open and close modal by adding and removing with classList
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
+
+// Edit Profile submission handler function [1]
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+  profileNameEl.textContent = editProfileNameInput.value;
+  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
+  closeModal(profileDescriptionModal);
+}
+
+// New Post modal submission [2]
+function handleAddCardSubmit(evt) {
+  evt.preventDefault();
+  console.log(captionNameInput.value);
+  console.log(captionLinkInput.value);
+  closeModal(newPostModal);
+  addCardFormElement.reset();
+}
 
 // event listeners for "Edit Profile" modal [1]
 editProfileBtn.addEventListener("click", function () {
@@ -54,29 +82,3 @@ newPostModalCloseBtn.addEventListener("click", function () {
 
 // event listener that will reset the form in the newPostModal after submit is pressed [2]
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
-
-// Edit Profile submission handler function [1]
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-  profileNameEl.textContent = editProfileNameInput.value;
-  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  closeModal(profileDescriptionModal);
-}
-
-// New Post modal submission [2]
-function handleAddCardSubmit(evt) {
-  evt.preventDefault();
-  console.log(captionNameInput.value);
-  console.log(captionLinkInput.value);
-  closeModal(newPostModal);
-  addCardFormElement.reset();
-}
-
-// General functions to open and close modal by adding and removing with classList
-function openModal(modal) {
-  modal.classList.add("modal_is-opened");
-}
-
-function closeModal(modal) {
-  modal.classList.remove("modal_is-opened");
-}
