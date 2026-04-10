@@ -74,6 +74,7 @@ function handleAddCardSubmit(evt) {
   console.log(captionNameInput.value);
   console.log(captionLinkInput.value);
   closeModal(newPostModal);
+  addCardFormElement.requestFullscreen();
 }
 
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
