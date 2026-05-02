@@ -59,6 +59,44 @@ const addCardFormElement = newPostModal.querySelector(".modal__form");
 const captionNameInput = newPostModal.querySelector("#caption-input");
 const captionLinkInput = newPostModal.querySelector("#card-image-input");
 
+const cardsList = document.querySelector(".cards__list");
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
+
+const previewModal = document.querySelector("#preview-modal");
+const previewModalImage = previewModal.querySelector(".modal__preview-image");
+const previewModalCaption = previewModal.querySelector(".modal__caption");
+const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardImage = cardElement.querySelector(".card__image");
+  const cardTitle = cardElement.querySelector(".card__title");
+  const cardLikeBtn = cardElement.querySelector(".card__like-button");
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-button");
+
+  cardDeleteBtn.addEventListener("click", function () {
+    cardElement.remove();
+  });
+  cardLikeBtn.addEventListener("click", function () {
+    cardLikeBtn.classList.toggle("card__like-button_liked");
+  });
+  cardImage.addEventListener("click", function () {
+    previewModalImage.src = data.link;
+    previewModalImage.alt = data.name;
+    previewModalCaption.textContent = data.name;
+    openModal(previewModal);
+  });
+  previewModalCloseBtn.addEventListener("click", function () {
+    closeModal(previewModal);
+  });
+  cardImage.src = data.link;
+  cardImage.alt = data.name;
+  cardTitle.textContent = data.name;
+  return cardElement;
+}
+
 // General functions to open and close modal by adding and removing with classList
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
@@ -79,6 +117,11 @@ function handleProfileFormSubmit(evt) {
 // New Post modal submission [2]
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
+  const cardElement = getCardElement({
+    name: captionNameInput.value,
+    link: captionLinkInput.value,
+  });
+  cardsList.prepend(cardElement);
   console.log(captionNameInput.value);
   console.log(captionLinkInput.value);
   closeModal(newPostModal);
@@ -112,4 +155,6 @@ addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach(function (card) {
   console.log(card.name);
+  const cardElement = getCardElement(card);
+  cardsList.prepend(cardElement);
 });
