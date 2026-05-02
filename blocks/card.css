@@ -10,6 +10,12 @@
   object-fit: cover;
   display: block;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+.card__image:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card__title {
@@ -37,18 +43,18 @@
   width: 23px;
   height: 20px;
   border: none;
-  opacity: 40%;
+  opacity: 0.4;
   cursor: pointer;
   background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .card__like-button_liked {
   background-image: url(../images/heart-filled.svg);
-  width: 22px;
-  height: 20px;
-  border: none;
   opacity: 1;
-  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .card__like-button:hover {
@@ -57,7 +63,7 @@
 }
 
 .card__like-button_liked:hover {
-  opacity: 50%;
+  opacity: 0.5;
   cursor: pointer;
 }
 
@@ -68,8 +74,8 @@
   border: none;
   background-color: transparent;
   position: absolute;
+  right: 10px;
   top: 10px;
-  left: 371px;
 }
 
 .card__delete-button:hover {

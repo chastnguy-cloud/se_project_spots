@@ -68,6 +68,9 @@ const previewModal = document.querySelector("#preview-modal");
 const previewModalImage = previewModal.querySelector(".modal__preview-image");
 const previewModalCaption = previewModal.querySelector(".modal__caption");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
+previewModalCloseBtn.addEventListener("click", function () {
+  closeModal(previewModal);
+});
 
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
@@ -88,9 +91,7 @@ function getCardElement(data) {
     previewModalCaption.textContent = data.name;
     openModal(previewModal);
   });
-  previewModalCloseBtn.addEventListener("click", function () {
-    closeModal(previewModal);
-  });
+
   cardImage.src = data.link;
   cardImage.alt = data.name;
   cardTitle.textContent = data.name;
