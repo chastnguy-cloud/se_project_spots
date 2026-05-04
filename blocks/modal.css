@@ -72,9 +72,20 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  right: -60px;
+  top: 16px; /* inside the container */
+  right: 16px; /* inside the container */
   border: none;
-  background: transparent url("../images/Close Icon.svg") center no-repeat;
+  opacity: 40%;
+  cursor: pointer;
+  background: transparent url("../images/close-button-dark.svg") center
+    no-repeat;
+}
+
+/* override ONLY the background image for the preview modal */
+.modal__container_type_image .modal__close-btn {
+  background: transparent url("../images/close_icon.svg") center no-repeat;
+  right: -60px; /* keep it outside the image for preview modal */
+  top: 0;
 }
 
 .modal__close-btn:hover {
