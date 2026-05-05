@@ -152,7 +152,7 @@
 
   .modal__container_type_image {
     width: 100%;
-    max-width: 100%;
+    max-height: 80vh;
     position: relative;
     padding: 0;
   }
@@ -173,7 +173,6 @@
   .modal__preview-image {
     width: 100%;
     max-width: 100%;
-    max-height: none;
     border-radius: 8px;
   }
 }
