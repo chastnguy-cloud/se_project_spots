@@ -57,6 +57,7 @@
   object-fit: contain;
   display: block;
   margin: 0 auto;
+  border-radius: 8px;
 }
 
 .modal__caption {
@@ -143,6 +144,19 @@
     max-width: none;
   }
 
+  .modal__container_type_image .modal__close-btn {
+    right: 0;
+    top: -48px;
+    left: auto;
+  }
+
+  .modal__container_type_image {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    padding: 0;
+  }
+
   .modal__container {
     padding: 22px 12px 12px;
   }
@@ -154,5 +168,12 @@
 
   .modal__title {
     font-size: 20px;
+  }
+
+  .modal__preview-image {
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
+    border-radius: 8px;
   }
 }

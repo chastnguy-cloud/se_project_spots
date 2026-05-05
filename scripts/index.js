@@ -123,8 +123,6 @@ function handleAddCardSubmit(evt) {
     link: captionLinkInput.value,
   });
   cardsList.prepend(cardElement);
-  console.log(captionNameInput.value);
-  console.log(captionLinkInput.value);
   closeModal(newPostModal);
   addCardFormElement.reset();
 }
@@ -155,7 +153,6 @@ newPostModalCloseBtn.addEventListener("click", function () {
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach(function (card) {
-  console.log(card.name);
   const cardElement = getCardElement(card);
   cardsList.prepend(cardElement);
 });
