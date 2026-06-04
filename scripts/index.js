@@ -98,13 +98,24 @@ function getCardElement(data) {
   return cardElement;
 }
 
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}
+
 // General functions to open and close modal by adding and removing with classList
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscClose);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.addEventListener("keydown", handleEscClose);
 }
 
 // Edit Profile submission handler function [1]
@@ -125,12 +136,17 @@ function handleAddCardSubmit(evt) {
   cardsList.prepend(cardElement);
   closeModal(newPostModal);
   addCardFormElement.reset();
+  resetValidation(addCardFormElement, settings);
 }
 
 // event listeners for "Edit Profile" modal [1]
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  resetValidation(
+    profileDescriptionModal.querySelector(".modal__form"),
+    settings,
+  );
   openModal(profileDescriptionModal);
 });
 
@@ -155,4 +171,13 @@ addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 initialCards.forEach(function (card) {
   const cardElement = getCardElement(card);
   cardsList.prepend(cardElement);
+});
+
+const modals = document.querySelectorAll(".modal");
+modals.forEach((modal) => {
+  modal.addEventListener("click", (evt) => {
+    if (evt.target === modal) {
+      closeModal(modal);
+    }
+  });
 });
