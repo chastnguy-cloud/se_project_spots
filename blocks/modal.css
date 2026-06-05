@@ -26,7 +26,7 @@
 
 .modal__title {
   margin: 0 0 32px;
-  font-family: Poppins;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 32px;
 }
@@ -76,7 +76,7 @@
   top: 16px; /* inside the container */
   right: 16px; /* inside the container */
   border: none;
-  opacity: 40%;
+  opacity: 0.4;
   cursor: pointer;
   background: transparent url("../images/close-button-dark.svg") center
     no-repeat;
