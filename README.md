@@ -62,8 +62,11 @@ Designed in Figma as part of the TripleTen Sprint 3 project. View the original d
 
 ## Project Pitch Video
 
-Check out [this video](https://www.loom.com/share/7504f5b5c5484e9880b649cd9988addb), where I describe my
+Check out these videos, where I describe my
 project and some challenges I faced while building it.
+
+- Spots Sprint 2 video - (https://www.loom.com/share/7504f5b5c5484e9880b649cd9988addb)
+- Spots Sprint 6 video - (https://www.loom.com/share/c1b2ece08e3442cc81ef94403094149c)
 
 ## Author
 
