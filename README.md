@@ -60,6 +60,10 @@ spots/
 
 Designed in Figma as part of the TripleTen Sprint 3 project. View the original design file [here](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots).
 
+## Project Demo Video
+
+- Spots API Integration Demo - (https://www.loom.com/share/c062e992a62340f1b08a926ae537d32d)
+
 ## Project Pitch Video
 
 Check out these videos, where I describe my
