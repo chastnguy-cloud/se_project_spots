@@ -98,5 +98,4 @@ const enableValidation = (config) => {
   });
 };
 
-// is the very last line that will begin the whole process
-enableValidation(settings);
+export { enableValidation, resetValidation, settings };
