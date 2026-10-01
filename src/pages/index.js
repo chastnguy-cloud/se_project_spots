@@ -69,8 +69,7 @@ const avatarModalCloseBtn = avatarModal.querySelector(".modal__close-btn");
 const avatarFormElement = avatarModal.querySelector(".modal__form");
 const avatarUrlInput = avatarModal.querySelector("#avatar-url-input");
 const profilePicture = document.querySelector(".profile__picture");
-
-avatarModalCloseBtn.addEventListener("click", () => closeModal(avatarModal));
+const avatarContainer = document.querySelector(".profile__avatar-container");
 
 function handleAvatarFormSubmit(evt) {
   evt.preventDefault();
@@ -90,10 +89,8 @@ function handleAvatarFormSubmit(evt) {
 }
 
 avatarFormElement.addEventListener("submit", handleAvatarFormSubmit);
-
-profilePicture.addEventListener("click", () => {
-  openModal(avatarModal);
-});
+avatarContainer.addEventListener("click", () => openModal(avatarModal));
+avatarModalCloseBtn.addEventListener("click", () => closeModal(avatarModal));
 
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
