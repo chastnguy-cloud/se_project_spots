@@ -81,6 +81,7 @@ function handleAvatarFormSubmit(evt) {
     .then((userData) => {
       profilePicture.src = userData.avatar;
       closeModal(avatarModal);
+      resetValidation(avatarFormElement, settings);
     })
     .catch(console.error)
     .finally(() => {
@@ -99,6 +100,10 @@ function getCardElement(data) {
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
   const cardLikeBtn = cardElement.querySelector(".card__like-button");
+  if (data.isLiked) {
+    cardLikeBtn.classList.add("card__like-button_liked");
+  }
+
   const cardDeleteBtn = cardElement.querySelector(".card__delete-button");
 
   cardDeleteBtn.addEventListener("click", function () {
@@ -165,6 +170,10 @@ function handleProfileFormSubmit(evt) {
       profileNameEl.textContent = userData.name;
       profileDescriptionEl.textContent = userData.about;
       closeModal(profileDescriptionModal);
+      resetValidation(
+        profileDescriptionModal.querySelector(".modal__form"),
+        settings,
+      );
     })
     .catch(console.error)
     .finally(() => {
